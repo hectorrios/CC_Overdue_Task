@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-31" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Task View Controller-->
         <scene sceneID="kcy-Ij-4t4">
             <objects>
-                <viewController id="m9U-zl-qbb" sceneMemberID="viewController">
+                <viewController id="m9U-zl-qbb" customClass="CCDetailTaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Ec-Vw-zgz"/>
                         <viewControllerLayoutGuide type="bottom" id="vT6-lq-QRG"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="433" y="462"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Task View Controller-->
         <scene sceneID="4ah-wu-BFI">
             <objects>
-                <viewController id="1oX-yP-Ztv" sceneMemberID="viewController">
+                <viewController id="1oX-yP-Ztv" customClass="CCEditTaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FIQ-hs-H2S"/>
                         <viewControllerLayoutGuide type="bottom" id="veN-sC-fzb"/>

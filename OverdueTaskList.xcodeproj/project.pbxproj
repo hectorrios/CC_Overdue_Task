@@ -22,6 +22,8 @@
 		EA58B1EF18364CA800CAC384 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA58B1ED18364CA800CAC384 /* InfoPlist.strings */; };
 		EA58B1F118364CA800CAC384 /* OverdueTaskListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1F018364CA800CAC384 /* OverdueTaskListTests.m */; };
 		EA58B1FC18364E5600CAC384 /* CCAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */; };
+		EA58B1FF18364EC500CAC384 /* CCDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1FE18364EC500CAC384 /* CCDetailTaskViewController.m */; };
+		EA58B20218364F7600CAC384 /* CCEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		EA58B1F018364CA800CAC384 /* OverdueTaskListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverdueTaskListTests.m; sourceTree = "<group>"; };
 		EA58B1FA18364E5600CAC384 /* CCAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddTaskViewController.h; sourceTree = "<group>"; };
 		EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddTaskViewController.m; sourceTree = "<group>"; };
+		EA58B1FD18364EC500CAC384 /* CCDetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDetailTaskViewController.h; sourceTree = "<group>"; };
+		EA58B1FE18364EC500CAC384 /* CCDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDetailTaskViewController.m; sourceTree = "<group>"; };
+		EA58B20018364F7600CAC384 /* CCEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditTaskViewController.h; sourceTree = "<group>"; };
+		EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				EA58B1D718364CA800CAC384 /* Main.storyboard */,
+				EA58B20018364F7600CAC384 /* CCEditTaskViewController.h */,
+				EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */,
+				EA58B1FD18364EC500CAC384 /* CCDetailTaskViewController.h */,
+				EA58B1FE18364EC500CAC384 /* CCDetailTaskViewController.m */,
 				EA58B1FA18364E5600CAC384 /* CCAddTaskViewController.h */,
 				EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */,
 				EA58B1DA18364CA800CAC384 /* CCViewController.h */,
@@ -256,9 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA58B1D618364CA800CAC384 /* CCAppDelegate.m in Sources */,
+				EA58B1FF18364EC500CAC384 /* CCDetailTaskViewController.m in Sources */,
 				EA58B1FC18364E5600CAC384 /* CCAddTaskViewController.m in Sources */,
 				EA58B1D218364CA800CAC384 /* main.m in Sources */,
 				EA58B1DC18364CA800CAC384 /* CCViewController.m in Sources */,
+				EA58B20218364F7600CAC384 /* CCEditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
