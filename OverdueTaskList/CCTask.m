@@ -16,11 +16,13 @@
 -(id)initWithData:(NSDictionary *)data {
     self = [super init];
     
-    self.title = data[TASK_TITLE];
-    self.description = data[TASK_DESCRIPTION];
-    self.date = data[TASK_DATE];
-    NSNumber *completion = data[TASK_COMPLETION];
-    self.completion = completion.boolValue;
+    if (self) {
+        self.title = data[TASK_TITLE];
+        self.description = data[TASK_DESCRIPTION];
+        self.date = data[TASK_DATE];
+        NSNumber *completion = data[TASK_COMPLETION];
+        self.completion = completion.boolValue;
+    }    
     
     return self;
 }

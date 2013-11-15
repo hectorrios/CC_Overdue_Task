@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *taskDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
 
+- (IBAction)editTaskButtonPressed:(UIBarButtonItem *)sender;
+
 @end

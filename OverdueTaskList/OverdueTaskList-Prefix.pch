@@ -15,7 +15,7 @@
 #define TASK_DATE @"taskDate"
 #define TASK_COMPLETION @"taskCompletion"
 
-#define TASK_ARRAY @"taskArray"
+#define TASK_OBJECTS_KEY @"taskobjectskey"
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
