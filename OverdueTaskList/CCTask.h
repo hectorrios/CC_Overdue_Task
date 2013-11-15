@@ -10,4 +10,13 @@
 
 @interface CCTask : NSObject
 
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic) BOOL completion;
+
+#pragma mark -- Designated Initializer
+
+-(id)initWithData:(NSDictionary *)data;
+
 @end
