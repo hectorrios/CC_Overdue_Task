@@ -112,8 +112,6 @@
 		EA58B1CB18364CA800CAC384 /* OverdueTaskList */ = {
 			isa = PBXGroup;
 			children = (
-				EA58B1D418364CA800CAC384 /* CCAppDelegate.h */,
-				EA58B1D518364CA800CAC384 /* CCAppDelegate.m */,
 				EA58B1D718364CA800CAC384 /* Main.storyboard */,
 				EA58B1DA18364CA800CAC384 /* CCViewController.h */,
 				EA58B1DB18364CA800CAC384 /* CCViewController.m */,
@@ -126,6 +124,8 @@
 		EA58B1CC18364CA800CAC384 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA58B1D418364CA800CAC384 /* CCAppDelegate.h */,
+				EA58B1D518364CA800CAC384 /* CCAppDelegate.m */,
 				EA58B1CD18364CA800CAC384 /* OverdueTaskList-Info.plist */,
 				EA58B1CE18364CA800CAC384 /* InfoPlist.strings */,
 				EA58B1D118364CA800CAC384 /* main.m */,
