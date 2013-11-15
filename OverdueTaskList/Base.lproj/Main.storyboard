@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="913" y="462"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Task View Controller-->
         <scene sceneID="L4C-28-Lae">
             <objects>
-                <viewController id="8Co-5e-Ogo" sceneMemberID="viewController">
+                <viewController id="8Co-5e-Ogo" customClass="CCAddTaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N1s-oF-Var"/>
                         <viewControllerLayoutGuide type="bottom" id="HRS-7E-X6F"/>

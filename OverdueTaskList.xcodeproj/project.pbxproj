@@ -21,6 +21,7 @@
 		EA58B1E718364CA800CAC384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA58B1C918364CA800CAC384 /* UIKit.framework */; };
 		EA58B1EF18364CA800CAC384 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA58B1ED18364CA800CAC384 /* InfoPlist.strings */; };
 		EA58B1F118364CA800CAC384 /* OverdueTaskListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1F018364CA800CAC384 /* OverdueTaskListTests.m */; };
+		EA58B1FC18364E5600CAC384 /* CCAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		EA58B1EC18364CA800CAC384 /* OverdueTaskListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OverdueTaskListTests-Info.plist"; sourceTree = "<group>"; };
 		EA58B1EE18364CA800CAC384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA58B1F018364CA800CAC384 /* OverdueTaskListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverdueTaskListTests.m; sourceTree = "<group>"; };
+		EA58B1FA18364E5600CAC384 /* CCAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddTaskViewController.h; sourceTree = "<group>"; };
+		EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				EA58B1D718364CA800CAC384 /* Main.storyboard */,
+				EA58B1FA18364E5600CAC384 /* CCAddTaskViewController.h */,
+				EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */,
 				EA58B1DA18364CA800CAC384 /* CCViewController.h */,
 				EA58B1DB18364CA800CAC384 /* CCViewController.m */,
 				EA58B1DD18364CA800CAC384 /* Images.xcassets */,
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA58B1D618364CA800CAC384 /* CCAppDelegate.m in Sources */,
+				EA58B1FC18364E5600CAC384 /* CCAddTaskViewController.m in Sources */,
 				EA58B1D218364CA800CAC384 /* main.m in Sources */,
 				EA58B1DC18364CA800CAC384 /* CCViewController.m in Sources */,
 			);
