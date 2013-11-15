@@ -24,6 +24,7 @@
 		EA58B1FC18364E5600CAC384 /* CCAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1FB18364E5600CAC384 /* CCAddTaskViewController.m */; };
 		EA58B1FF18364EC500CAC384 /* CCDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1FE18364EC500CAC384 /* CCDetailTaskViewController.m */; };
 		EA58B20218364F7600CAC384 /* CCEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */; };
+		EA58B20618365AF600CAC384 /* CCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B20518365AF600CAC384 /* CCTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		EA58B1FE18364EC500CAC384 /* CCDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDetailTaskViewController.m; sourceTree = "<group>"; };
 		EA58B20018364F7600CAC384 /* CCEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditTaskViewController.h; sourceTree = "<group>"; };
 		EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditTaskViewController.m; sourceTree = "<group>"; };
+		EA58B20418365AF600CAC384 /* CCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTask.h; sourceTree = "<group>"; };
+		EA58B20518365AF600CAC384 /* CCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 		EA58B1CB18364CA800CAC384 /* OverdueTaskList */ = {
 			isa = PBXGroup;
 			children = (
+				EA58B20318365ACC00CAC384 /* model */,
 				EA58B1D718364CA800CAC384 /* Main.storyboard */,
 				EA58B20018364F7600CAC384 /* CCEditTaskViewController.h */,
 				EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */,
@@ -165,6 +169,15 @@
 				EA58B1ED18364CA800CAC384 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA58B20318365ACC00CAC384 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EA58B20418365AF600CAC384 /* CCTask.h */,
+				EA58B20518365AF600CAC384 /* CCTask.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +282,7 @@
 				EA58B1FF18364EC500CAC384 /* CCDetailTaskViewController.m in Sources */,
 				EA58B1FC18364E5600CAC384 /* CCAddTaskViewController.m in Sources */,
 				EA58B1D218364CA800CAC384 /* main.m in Sources */,
+				EA58B20618365AF600CAC384 /* CCTask.m in Sources */,
 				EA58B1DC18364CA800CAC384 /* CCViewController.m in Sources */,
 				EA58B20218364F7600CAC384 /* CCEditTaskViewController.m in Sources */,
 			);

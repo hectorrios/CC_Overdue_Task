@@ -10,4 +10,12 @@
 
 @interface CCAddTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *taskNameField;
+@property (strong, nonatomic) IBOutlet UITextView *taskDescriptionField;
+@property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePickerField;
+
+- (IBAction)addTaskButtonPressed:(UIButton *)sender;
+- (IBAction)cancelButtonPressed:(UIButton *)sender;
+
+
 @end

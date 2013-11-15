@@ -10,4 +10,8 @@
 
 @interface CCDetailTaskViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *taskNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *taskDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
+
 @end
