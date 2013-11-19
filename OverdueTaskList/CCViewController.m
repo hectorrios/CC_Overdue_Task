@@ -109,7 +109,9 @@
     cell.detailTextLabel.text = [formatter stringFromDate:task.date];
     
     //Determine the color coding for the cell
-    if ([self isDateGreaterThan:task.date SecondDate:[NSDate date]]) {
+    if (task.completion == YES) {
+        cell.backgroundColor = [UIColor greenColor];
+    } else if ([self isDateGreaterThan:task.date SecondDate:[NSDate date]]) {
         cell.backgroundColor = [UIColor yellowColor];
     } else {
         cell.backgroundColor = [UIColor redColor];
@@ -128,6 +130,14 @@
 
 #pragma mark -- TableView delegate methods
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Get the task from taskObjects array
+    CCTask *task = [self.taskObjects objectAtIndex:indexPath.row];
+    task.completion = !task.completion;
+    
+    [self updateCompletionOfTask:task forIndexPath:indexPath];
+    [self.tableView reloadData];
+}
 
 #pragma mark -- Private Helper methods
 
@@ -150,6 +160,24 @@
     } else {
         return NO;
     }
+}
+
+-(void)updateCompletionOfTask:(CCTask *)task forIndexPath:(NSIndexPath *)indexPath {
+    
+    NSMutableArray *tasksAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY] mutableCopy];
+    
+    //Remove the dictionary entry object at the index specified by indexPath.row
+    [tasksAsPropertyLists removeObjectAtIndex:indexPath.row];
+    
+    //convert the passed in Task to an NSDictionary
+    NSDictionary *dictionary = [self taskObjetAsAPropertyList:task];
+    
+    //insert this dictionary into the Array at the position specified by indexPath.row
+    [tasksAsPropertyLists insertObject:dictionary atIndex:indexPath.row];
+    
+    //Save the array back into NSUserDefaults
+    [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
