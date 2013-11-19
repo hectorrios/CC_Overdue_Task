@@ -7,6 +7,7 @@
 //
 
 #import "CCViewController.h"
+#import "CCDetailTaskViewController.h"
 
 @interface CCViewController ()
 
@@ -44,6 +45,10 @@
     if ([segue.destinationViewController isKindOfClass:[CCAddTaskViewController class]]) {
         CCAddTaskViewController *addTaskController = segue.destinationViewController;
         addTaskController.delegate = self;
+    } else if ([segue.destinationViewController isKindOfClass:[CCDetailTaskViewController class]]) {
+        CCDetailTaskViewController *detailController = segue.destinationViewController;
+        NSIndexPath *indexPath = sender;
+        detailController.task = self.taskObjects[indexPath.row];
     }
 }
 
@@ -153,6 +158,10 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.tableView reloadData];
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"pushToDetailController" sender:indexPath];
 }
 
 #pragma mark -- Private Helper methods

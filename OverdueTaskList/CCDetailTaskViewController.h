@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCTask.h"
 
 @interface CCDetailTaskViewController : UIViewController
+
+@property (nonatomic, strong) CCTask *task;
 
 @property (strong, nonatomic) IBOutlet UILabel *taskNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDescriptionLabel;
