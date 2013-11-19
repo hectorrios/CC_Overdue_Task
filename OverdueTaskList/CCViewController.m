@@ -130,12 +130,28 @@
 
 #pragma mark -- TableView delegate methods
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //Get the task from taskObjects array
     CCTask *task = [self.taskObjects objectAtIndex:indexPath.row];
     task.completion = !task.completion;
     
     [self updateCompletionOfTask:task forIndexPath:indexPath];
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //remove the task from the taskObjects array
+    [self.taskObjects removeObjectAtIndex:indexPath.row];
+    
+    NSMutableArray *storedTasks = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY] mutableCopy];
+    [storedTasks removeObjectAtIndex:indexPath.row];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:storedTasks forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self.tableView reloadData];
 }
 
@@ -178,6 +194,8 @@
     //Save the array back into NSUserDefaults
     [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyLists forKey:TASK_OBJECTS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.tableView reloadData];
 }
 
 @end
