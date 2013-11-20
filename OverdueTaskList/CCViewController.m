@@ -55,6 +55,11 @@
 #pragma IBAction methods
 
 - (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender {
+    if (self.tableView.editing) {
+        [self.tableView setEditing:NO animated:YES];
+    } else {
+        [self.tableView setEditing:YES animated:YES];
+    }
 }
 
 - (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender {
@@ -148,20 +153,39 @@
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //remove the task from the taskObjects array
-    [self.taskObjects removeObjectAtIndex:indexPath.row];
     
-    NSMutableArray *storedTasks = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY] mutableCopy];
-    [storedTasks removeObjectAtIndex:indexPath.row];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:storedTasks forKey:TASK_OBJECTS_KEY];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.tableView reloadData];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //remove the task from the taskObjects array
+        [self.taskObjects removeObjectAtIndex:indexPath.row];
+        
+        NSMutableArray *storedTasks = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY] mutableCopy];
+        [storedTasks removeObjectAtIndex:indexPath.row];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:storedTasks forKey:TASK_OBJECTS_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        //[self.tableView reloadData];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"pushToDetailController" sender:indexPath];
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    //Remove the Task from the taskObjects and re-insert it at position X found in destinationIndexPath
+    CCTask *taskToMove = [self.taskObjects objectAtIndex:sourceIndexPath.row];
+    [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
+    
+    [self.taskObjects insertObject:taskToMove atIndex:destinationIndexPath.row];
+    
+    [self saveTasks];
 }
 
 #pragma mark -- Private Helper methods
@@ -200,11 +224,26 @@
     //insert this dictionary into the Array at the position specified by indexPath.row
     [tasksAsPropertyLists insertObject:dictionary atIndex:indexPath.row];
     
+    [self savePropertyListArray:tasksAsPropertyLists];
+    
+    [self.tableView reloadData];
+}
+
+-(void)saveTasks {
+    NSMutableArray *tasksAsPropertyLists = [[NSMutableArray alloc] init];
+    
+    for (CCTask *task in self.taskObjects) {
+        [tasksAsPropertyLists addObject:[self taskObjetAsAPropertyList:task]];
+    }
+    
+    //save the new array
+    [self savePropertyListArray:tasksAsPropertyLists];
+}
+
+-(void)savePropertyListArray:(NSMutableArray *)tasksAsPropertyLists {
     //Save the array back into NSUserDefaults
     [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyLists forKey:TASK_OBJECTS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.tableView reloadData];
 }
 
 @end
