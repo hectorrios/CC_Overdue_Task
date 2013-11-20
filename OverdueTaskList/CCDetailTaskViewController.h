@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CCTask.h"
 
-@interface CCDetailTaskViewController : UIViewController
+@protocol CCDetailTaskViewControllerDelegate <NSObject>
+
+-(void)taskDidChange;
+
+@end
+
+@interface CCDetailTaskViewController : UIViewController 
+
+@property (nonatomic, weak) id <CCDetailTaskViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) CCTask *task;
 

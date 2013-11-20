@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CCAddTaskViewController.h"
+#import "CCDetailTaskViewController.h"
 
-@interface CCViewController : UIViewController <CCAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CCViewController : UIViewController <CCAddTaskViewControllerDelegate, UITableViewDataSource,
+UITableViewDelegate, CCDetailTaskViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *taskObjects;
 

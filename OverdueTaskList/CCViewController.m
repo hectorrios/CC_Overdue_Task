@@ -7,7 +7,6 @@
 //
 
 #import "CCViewController.h"
-#import "CCDetailTaskViewController.h"
 
 @interface CCViewController ()
 
@@ -31,7 +30,6 @@
     //set the delegate property and the datasource property of the tableview to this controller
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +47,7 @@
         CCDetailTaskViewController *detailController = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
         detailController.task = self.taskObjects[indexPath.row];
+        detailController.delegate = self;
     }
 }
 
@@ -186,6 +185,12 @@
     [self.taskObjects insertObject:taskToMove atIndex:destinationIndexPath.row];
     
     [self saveTasks];
+}
+
+#pragma mark -- CCDetailTaskViewController Delegate
+-(void)taskDidChange {
+    [self saveTasks];
+    [self.tableView reloadData];
 }
 
 #pragma mark -- Private Helper methods

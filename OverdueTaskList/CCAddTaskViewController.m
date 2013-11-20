@@ -8,7 +8,7 @@
 
 #import "CCAddTaskViewController.h"
 
-@interface CCAddTaskViewController () <UITextViewDelegate>
+@interface CCAddTaskViewController () <UITextViewDelegate, UITextFieldDelegate>
 
 @end
 
@@ -30,6 +30,7 @@
     
     //set the view controller as the delegate for the UITextView class
     self.taskDescriptionField.delegate = self;
+    self.taskNameField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +66,12 @@
         return YES;
     }
     
+}
+
+#pragma mark -- UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark -- Helper Methods

@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CCTask.h"
 
-@interface CCEditTaskViewController : UIViewController
+@protocol CCEditTaskViewControllerDelegate <NSObject>
+
+-(void)updateTaskPressed;
+
+@end
+
+@interface CCEditTaskViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
+
+@property (nonatomic, weak) id <CCEditTaskViewControllerDelegate> delegate;
 
 @property (nonatomic, strong) CCTask *task;
 
