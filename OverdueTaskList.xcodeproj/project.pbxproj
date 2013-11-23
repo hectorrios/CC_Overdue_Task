@@ -25,6 +25,8 @@
 		EA58B1FF18364EC500CAC384 /* CCDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B1FE18364EC500CAC384 /* CCDetailTaskViewController.m */; };
 		EA58B20218364F7600CAC384 /* CCEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */; };
 		EA58B20618365AF600CAC384 /* CCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58B20518365AF600CAC384 /* CCTask.m */; };
+		EA5AB15F183FFA220099FBBC /* dark_fish_skin_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5AB15D183FFA220099FBBC /* dark_fish_skin_@2X.png */; };
+		EA5AB160183FFA220099FBBC /* dark_fish_skin.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5AB15E183FFA220099FBBC /* dark_fish_skin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		EA58B20118364F7600CAC384 /* CCEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditTaskViewController.m; sourceTree = "<group>"; };
 		EA58B20418365AF600CAC384 /* CCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTask.h; sourceTree = "<group>"; };
 		EA58B20518365AF600CAC384 /* CCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTask.m; sourceTree = "<group>"; };
+		EA5AB15D183FFA220099FBBC /* dark_fish_skin_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark_fish_skin_@2X.png"; sourceTree = "<group>"; };
+		EA5AB15E183FFA220099FBBC /* dark_fish_skin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_fish_skin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 		EA58B1CC18364CA800CAC384 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA5AB15D183FFA220099FBBC /* dark_fish_skin_@2X.png */,
+				EA5AB15E183FFA220099FBBC /* dark_fish_skin.png */,
 				EA58B1D418364CA800CAC384 /* CCAppDelegate.h */,
 				EA58B1D518364CA800CAC384 /* CCAppDelegate.m */,
 				EA58B1CD18364CA800CAC384 /* OverdueTaskList-Info.plist */,
@@ -258,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA58B1DE18364CA800CAC384 /* Images.xcassets in Resources */,
+				EA5AB15F183FFA220099FBBC /* dark_fish_skin_@2X.png in Resources */,
 				EA58B1D018364CA800CAC384 /* InfoPlist.strings in Resources */,
 				EA58B1D918364CA800CAC384 /* Main.storyboard in Resources */,
+				EA5AB160183FFA220099FBBC /* dark_fish_skin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +501,7 @@
 				EA58B1F618364CA800CAC384 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA58B1F718364CA800CAC384 /* Build configuration list for PBXNativeTarget "OverdueTaskListTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +510,7 @@
 				EA58B1F918364CA800CAC384 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

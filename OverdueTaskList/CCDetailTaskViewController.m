@@ -32,7 +32,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //Initialize the task related fields
+    
     [self initTaskFields];
+    
+    //Set the background image
+    UIImage *backImage = [UIImage imageNamed:BACKGROUND_IMAGE];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +63,15 @@
     [self performSegueWithIdentifier:@"pushToEditController" sender:sender];
 }
 
+- (IBAction)taskCompletionSwitchChanged:(UISwitch *)sender {
+    //Set the completion status to whatever the status of the switch is
+    self.task.completion = self.taskCompletionSwitch.on;
+    
+    //Call the delegate to save the task
+    [self.delegate taskDidChange];
+}
+
+
 #pragma mark -- CCEditTaskViewController Delegate
 -(void)updateTaskPressed {
     [self initTaskFields];
@@ -68,7 +84,11 @@
     self.taskDescriptionLabel.text = self.task.description;
     self.taskNameLabel.text = self.task.title;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
+    [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     self.taskDateLabel.text = [formatter stringFromDate:self.task.date];
+    
+    //check the completion status of the task and sets the UISwitch appropriately
+    [self.taskCompletionSwitch setOn:self.task.completion animated:YES];
+
 }
 @end

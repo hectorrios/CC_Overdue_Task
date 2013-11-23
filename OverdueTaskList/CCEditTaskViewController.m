@@ -27,11 +27,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    NSLog(@"Edit task controller. View Did Load");
+    //Initialize Task related fields
     self.taskNameField.text = self.task.title;
     self.taskDescription.text = self.task.description;
     self.taskDatePickerField.date = self.task.date;
+    [self.taskCompletionSwitchField setOn:self.task.completion animated:YES];
+    
+    //assign protocol delegates
     self.taskNameField.delegate = self;
     self.taskDescription.delegate = self;
+    
+    //Set the background image
+    UIImage *backImage = [UIImage imageNamed:BACKGROUND_IMAGE];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +56,8 @@
     
     self.task.title = self.taskNameField.text;
     self.task.description = self.taskDescription.text;
-    self.taskDatePickerField.date = self.taskDatePickerField.date;
+    self.task.date = self.taskDatePickerField.date;
+    self.task.completion = self.taskCompletionSwitchField.on;
     
     [self.delegate updateTaskPressed];
     [self.navigationController popViewControllerAnimated:YES];

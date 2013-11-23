@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *taskNameField;
 @property (strong, nonatomic) IBOutlet UITextView *taskDescription;
 @property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePickerField;
+@property (strong, nonatomic) IBOutlet UISwitch *taskCompletionSwitchField;
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 

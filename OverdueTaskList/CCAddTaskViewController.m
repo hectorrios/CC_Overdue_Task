@@ -31,6 +31,10 @@
     //set the view controller as the delegate for the UITextView class
     self.taskDescriptionField.delegate = self;
     self.taskNameField.delegate = self;
+    
+    //Set the background image
+    UIImage *backImage = [UIImage imageNamed:BACKGROUND_IMAGE];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backImage];
 }
 
 - (void)didReceiveMemoryWarning

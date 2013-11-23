@@ -30,6 +30,10 @@
     //set the delegate property and the datasource property of the tableview to this controller
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    //Set the background image
+    UIImage *backImage = [UIImage imageNamed:BACKGROUND_IMAGE];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:backImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,7 +117,7 @@
     cell.textLabel.text = task.title;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
+    [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     
     cell.detailTextLabel.text = [formatter stringFromDate:task.date];
     

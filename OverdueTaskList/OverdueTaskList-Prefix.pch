@@ -14,6 +14,7 @@
 #define TASK_DESCRIPTION @"taskDescription"
 #define TASK_DATE @"taskDate"
 #define TASK_COMPLETION @"taskCompletion"
+#define BACKGROUND_IMAGE @"dark_fish_skin.png"
 
 #define TASK_OBJECTS_KEY @"taskobjectskey"
 
